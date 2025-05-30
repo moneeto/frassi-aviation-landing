@@ -1,17 +1,21 @@
-import Home from './components/Home.jsx'
-import AboutUs from './components/AboutUs'
-import Services from './components/Services'
-import ClientInquiry from './components/ClientInquiry'
-import Gallery from './components/Gallery'
-import Partners from './components/Partners'
-import Contact from './components/Contact'
-import './App.css'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Home from './pages/Home/Home.jsx'
+import AboutUs from './pages/AboutUs/AboutUs.jsx'
+import Certificates from './pages/Certificates/Certificates.jsx'
+import Services from './pages/Services/Services.jsx'
+import ClientInquiry from './pages/ClientInquiry/ClientInquiry.jsx'
+import Gallery from './pages/Gallery/Gallery.jsx'
+import Partners from './pages/Partners/Partners.jsx'
+import Contact from './pages/Contact/Contact.jsx'
+import './App.scss'
 
 function App() {
   return (
     <>
+      <Navbar />
       <Home />
       <AboutUs />
+      <Certificates />
       <Services />
       <ClientInquiry />
       <Gallery />

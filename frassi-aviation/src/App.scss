@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --font-primary: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-secondary: 'Lobster', cursive;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+.font-primary {
+  font-family: var(--font-primary) !important;
+  color: #005caa;
+  font-size: 3rem;
+}
+.font-secondary, .lobster {
+  font-family: var(--font-secondary) !important;
+  color: #444444;
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: var(--font-primary);
+  color: #595959;
+} 

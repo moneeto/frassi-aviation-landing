@@ -1,0 +1,88 @@
+#clientinquiry {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+}
+
+.clientinquiry-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.clientinquiry-form {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.2rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 0.2rem;
+}
+
+textarea {
+  resize: none;
+  min-height: 60px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #005caa;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 0;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-btn:hover {
+  background: #003e7a;
+}
+
+.success-msg {
+  color: #1ca41c;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.error-msg {
+  color: #d32f2f;
+  text-align: center;
+  margin-top: 0.5rem;
+}
