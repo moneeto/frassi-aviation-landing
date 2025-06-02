@@ -51,7 +51,6 @@ const Services = () => {
               </tr>
             </tbody>
           </Table>
-          <hr />
           <div className="d-flex flex-column align-items-center justify-content-center">
             <h2 className="font-secondary">Check our projects and clients witnesses</h2>
             <Button color="primary"><b>SEE THE GALLERY</b></Button>

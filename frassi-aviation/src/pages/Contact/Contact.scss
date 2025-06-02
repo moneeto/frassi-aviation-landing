@@ -15,14 +15,14 @@
 
 .contact-row {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
   gap: 0;
 }
 
 .contact-info-col {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -30,13 +30,14 @@
   background: #fff;
   border-radius: 2rem;
   padding: 2.5rem 2.2rem;
-  width: 95%;
-  max-width: 500px;
-  min-height: 420px;
+  width: 100%;
+  max-width: 550px;
+  min-height: 440px;
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  justify-content: space-between;
 }
 
 .contact-info-item {
@@ -61,9 +62,9 @@
   background: #fff;
   border-radius: 2rem;
   padding: 2.5rem 2.2rem;
-  width: 95%;
-  max-width: 420px;
-  min-height: 420px;
+  width: 100%;
+  max-width: 540px;
+  min-height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +72,6 @@
 }
 
 .contact-form-subtitle {
-  font-style: italic;
   color: #444;
   margin-bottom: 0.2rem;
   text-align: center;
@@ -92,18 +92,18 @@
   gap: 0.7rem;
 }
 
-.form-row {
+.custom-form-row {
   display: flex;
   gap: 1rem;
 }
 
-.form-group {
+.custom-form-group {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.form-group label {
+.custom-form-group label {
   font-size: 1rem;
   color: #222;
   margin-bottom: 0.2rem;
@@ -122,7 +122,7 @@ textarea {
 
 textarea {
   resize: none;
-  min-height: 60px;
+  min-height: 20px;
 }
 
 .contact-submit-btn {
@@ -146,6 +146,7 @@ textarea {
   .contact-row {
     flex-direction: column;
     gap: 2.5rem;
+    align-items: stretch;
   }
   .contact-info-col, .contact-form-col {
     justify-content: center;
@@ -160,4 +161,15 @@ textarea {
     text-align: center;
     margin-left: 0;
   }
+}
+
+#home,
+#contact,
+#certificates,
+#gallery,
+#aboutus,
+#partners,
+#services,
+#clientinquiry {
+  scroll-margin-top: 90px;
 }

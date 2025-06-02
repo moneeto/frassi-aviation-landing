@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar/Navbar.jsx'
 import Home from './pages/Home/Home.jsx'
 import AboutUs from './pages/AboutUs/AboutUs.jsx'
 import Certificates from './pages/Certificates/Certificates.jsx'
@@ -7,6 +6,7 @@ import ClientInquiry from './pages/ClientInquiry/ClientInquiry.jsx'
 import Gallery from './pages/Gallery/Gallery.jsx'
 import Partners from './pages/Partners/Partners.jsx'
 import Contact from './pages/Contact/Contact.jsx'
+import Navbar from './components/Navbar.jsx'
 import './App.scss'
 
 function App() {

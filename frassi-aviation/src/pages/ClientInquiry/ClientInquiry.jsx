@@ -9,7 +9,7 @@ const ClientInquiry = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     setStatus('');
-    emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form.current, 'TU_USER_ID')
+    emailjs.sendForm('service_qsbbyee', 'template_g7l5adn', form.current, '0OjLXMLIsJumyK3u2')
       .then((result) => {
         setStatus('success');
         form.current.reset();

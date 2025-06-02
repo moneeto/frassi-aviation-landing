@@ -5,7 +5,7 @@ import './Contact.scss';
 const Contact = () => {
   return (
     <section id="contact" style={{ minHeight: '100vh' }}>
-      <h2 className="contact-title font-primary"><b>CONTACT</b></h2>
+      <h2 className="contact-title font-primary-white"><b>CONTACT</b></h2>
       <Row className="contact-row">
         <Col md="6" className="contact-info-col">
           <div className="contact-info-box">
@@ -34,27 +34,23 @@ const Contact = () => {
         </Col>
         <Col md="6" className="contact-form-col">
           <div className="contact-form-box">
-            <h3 className="contact-form-subtitle">Get your</h3>
-            <h2 className="contact-form-title font-primary"><b>QUOTE</b></h2>
+            <h3 className="font-secondary">Get your</h3>
+            <h2 className="font-primary"><b>QUOTE</b></h2>
             <Form className="contact-form">
               <FormGroup>
                 <Label for="name">Full name</Label>
                 <Input type="text" name="name" id="name" required />
               </FormGroup>
-              <Row className="form-row">
-                <Col xs="12" md="6">
-                  <FormGroup>
+              <div className="custom-form-row">
+                <div className="custom-form-group">
                     <Label for="phone">Phone</Label>
                     <Input type="text" name="phone" id="phone" required />
-                  </FormGroup>
-                </Col>
-                <Col xs="12" md="6">
-                  <FormGroup>
+                </div>
+                <div className="custom-form-group">
                     <Label for="email">Email</Label>
                     <Input type="email" name="email" id="email" required />
-                  </FormGroup>
-                </Col>
-              </Row>
+                </div>
+              </div>
               <FormGroup>
                 <Label for="subject">Subject</Label>
                 <Input type="text" name="subject" id="subject" required />
