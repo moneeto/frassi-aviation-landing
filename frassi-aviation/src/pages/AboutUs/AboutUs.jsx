@@ -9,7 +9,7 @@ const AboutUs = () => {
     <section id="aboutus">
       <Row className="align-items-center justify-content-center" style={{ minHeight: '350px' }}>
         <Col md="4" className="d-flex justify-content-center">
-          <img src={aboutUsImage_1} alt="Ayrton fixing a airplane' swing" className="aboutus-image" />
+          <img src={aboutUsImage_1} alt="Ayrton fixing a airplane' swing" className="aboutus-image" loading="lazy" />
         </Col>
         <Col md="6" className="d-flex align-items-center justify-content-center">
           <div className="aboutus-box-content">
@@ -52,7 +52,7 @@ const AboutUs = () => {
           </div>
         </Col>
         <Col md="4" className="d-flex justify-content-center">
-          <img src={aboutUsImage_2} alt="Ayrton fixing a airplane' swing" className="aboutus-image aboutus-image-large" />
+          <img src={aboutUsImage_2} alt="Ayrton fixing a airplane' swing" className="aboutus-image aboutus-image-large" loading="lazy" />
         </Col>
       </Row>
     </section>

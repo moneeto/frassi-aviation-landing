@@ -16,17 +16,17 @@ const Home = () => {
             <p>Precision. Commitment. Aviation Excellence</p>
           </div>
           <div className="home-buttons">
-            <Button color="secondary" outline className="home-button">
+            <Button color="secondary" outline className="home-button" onClick={() => window.location.href = '#services'}>
               <b>SEARCH IN SERVICES</b>
             </Button>
-            <Button color="primary"className="home-button">
+            <Button color="primary"className="home-button" onClick={() => window.location.href = '#aboutus'}>
               <b>LEARN MORE</b>
             </Button>
           </div>
           <hr />
           <div className="home-box-content">
             <p>Do you need advice or want to start a inquiry?</p>
-            <Button color="primary" className="home-button">
+            <Button color="primary" className="home-button" onClick={() => window.location.href = '#clientinquiry'}>
               <b>REQUEST A QUOTE</b>
             </Button>
           </div>

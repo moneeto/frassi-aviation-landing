@@ -4,7 +4,7 @@ import aboutUsImage_1 from '../../assets/aboutUsImage_1.png';
 import aboutUsImage_2 from '../../assets/aboutUsImage_2.jpg';
 import { FaCertificate } from 'react-icons/fa';
 import React from 'react';
-
+import machxlogo from '../../assets/MACHX.png';
 // Datos de los certificados
 const certificatesData = [
   {
@@ -31,7 +31,7 @@ const certificatesData = [
 const CertificateCard = ({ image, description, icon }) => (
   <div className="certificate-card">
     <div className="certificate-card-img-wrapper">
-      <img src={image} alt="certificate" className="certificate-card-img" />
+      <img src={image} alt="certificate" className="certificate-card-img" loading="lazy" />
       <span className="certificate-card-icon">{React.cloneElement(icon, { size: 32, color: "#005caa" })}</span>
     </div>
     <p className="certificate-card-desc">{description}</p>
@@ -88,7 +88,7 @@ const Certificates = () => {
                     <p>We work together in the smart and logistical integration with the hangars</p>
                     <br />
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non ligula non sapien laoreet rhoncus vel vel arcu. Sed vel ex euismod, aliquet lorem a, varius turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    <img src={aboutUsImage_1} alt="Mach X integration" className="aboutus-image img-fluid" />
+                    <img src={machxlogo} alt="Mach X integration" className="aboutus-image img-fluid" loading="lazy" />
                     <br />
                     <a href="https://www.machx.it/" target="_blank" rel="noopener noreferrer" className="d-flex justify-content-center">
                         <Button color="primary"><b>LEARN MORE ABOUT MACH X</b></Button>

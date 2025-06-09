@@ -4,15 +4,26 @@ import './Gallery.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import img1 from '../../assets/aboutUsImage_1.png';
-import img2 from '../../assets/aboutUsImage_2.jpg';
-import img3 from '../../assets/avionHOME.jpg';
+import img1 from '../../assets/galeria1.jpg';
+import img2 from '../../assets/galeria2.jpg';
+import img3 from '../../assets/galeria3.jpg';
+import img4 from '../../assets/galeria4.jpg';
+import img5 from '../../assets/galeria5.jpg';
+import img6 from '../../assets/galeria6.jpg';
+import img7 from '../../assets/galeria7.jpg';
+import img8 from '../../assets/galeria8.jpg';
+import img9 from '../../assets/galeria9.jpg';
 
 const images = [
-  { src: img1, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { src: img2, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { src: img3, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { src: img1, desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { src: img1, desc: 'Tail building' },
+  { src: img2, desc: 'Bottom installation and painting' },
+  { src: img3, desc: 'Engine swapping' },
+  { src: img4, desc: 'Our clothes' },
+  { src: img5, desc: 'Bottom installation' },
+  { src: img6, desc: 'Wing riveting' },
+  { src: img7, desc: 'Technical inspection' },
+  { src: img8, desc: 'Cargo transport' },
+  { src: img9, desc: 'Glass renewal' },
 ];
 
 const Gallery = () => {
@@ -31,7 +42,7 @@ const Gallery = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
       {
@@ -52,7 +63,7 @@ const Gallery = () => {
       <Slider {...settings} className="gallery-slider">
         {images.map((img, idx) => (
           <div className="gallery-slide" key={idx}>
-            <img src={img.src} alt={`gallery-${idx}`} />
+            <img src={img.src} alt={`gallery-${idx}`} className="gallery-big-img" loading="lazy" />
             <p>{img.desc}</p>
           </div>
         ))}

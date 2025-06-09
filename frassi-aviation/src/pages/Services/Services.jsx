@@ -1,5 +1,9 @@
 import { Row, Col, Table, Button } from 'reactstrap';
 import './Services.scss';
+import img1 from '../../assets/services1.jpg';
+import img2 from '../../assets/services2.jpg';
+import img3 from '../../assets/services3.jpg';
+
 
 const Services = () => {
   return (
@@ -12,7 +16,7 @@ const Services = () => {
       </Row>
       <Row className="justify-content-center">
         <Col md="10">
-          <Table bordered responsive className="text-center align-middle">
+          <Table bordered responsive className="text-center align-middle services-table-fixed">
             <thead>
               <tr className="services-table-header">
                 <th style={{backgroundColor: '#005caa', color: '#ffffff', fontSize: '1.2rem', fontWeight: '600'}}>MAINTENANCE</th>
@@ -51,9 +55,14 @@ const Services = () => {
               </tr>
             </tbody>
           </Table>
-          <div className="d-flex flex-column align-items-center justify-content-center">
+          <div className="services-images">
+            <img src={img1} alt="Services" loading="lazy" />
+            <img src={img2} alt="Services" loading="lazy" />
+            <img src={img3} alt="Services" loading="lazy" />
+          </div>
+          <div className="d-flex flex-column align-items-center justify-content-center mb-5">
             <h2 className="font-secondary">Check our projects and clients witnesses</h2>
-            <Button color="primary"><b>SEE THE GALLERY</b></Button>
+            <Button color="primary" onClick={() => window.location.href = '#gallery'}><b>SEE THE GALLERY</b></Button>
           </div>
         </Col>
       </Row>

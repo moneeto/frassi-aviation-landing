@@ -4,13 +4,13 @@ import logo from '../assets/FrassiLogo.jpeg';
 import { Button } from 'reactstrap';
 
 const sections = [
-  { id: 'home', label: 'Home' },
-  { id: 'aboutus', label: 'About Us' },
-  { id: 'services', label: 'Services' },
-  { id: 'clientinquiry', label: 'Client Inquiry' },
-  { id: 'gallery', label: 'Gallery' },
-  { id: 'partners', label: 'Partners' },
-  { id: 'contact', label: 'Contact', isButton: true },
+  { id: 'home', label: 'HOME' },
+  { id: 'aboutus', label: 'ABOUT US' },
+  { id: 'services', label: 'SERVICES' },
+  { id: 'clientinquiry', label: 'CLIENT INQUIRY' },
+  { id: 'gallery', label: 'GALLERY' },
+  { id: 'partners', label: 'PARTNERS' },
+  { id: 'contact', label: 'CONTACT', isButton: true },
 ];
 
 const Navbar = () => {
@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="FRASSI AVIATION" />
+        <img src={logo} alt="FRASSI AVIATION" loading="lazy" />
       </div>
       <div className={`navbar-burger${open ? ' open' : ''}`} onClick={() => setOpen(!open)}>
         <span className="bar"></span>
