@@ -176,17 +176,11 @@ const Footer = () => {
             <hr className="footer-divider-small" />
             <p className="social-title">Follow us on social media!</p>
             <div className="footer-social">
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/frass.amv" aria-label="Facebook">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/frassiaviation/" aria-label="Instagram">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="#" aria-label="WhatsApp">
-                <i className="fab fa-whatsapp"></i>
               </a>
             </div>
           </div>

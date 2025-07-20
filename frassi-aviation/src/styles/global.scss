@@ -33,10 +33,6 @@ button,
     text-decoration: none;
   }
   
-  &:active {
-    // No transform needed
-  }
-  
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 92, 170, 0.3);
@@ -46,8 +42,6 @@ button,
     background: #ccc;
     cursor: not-allowed;
     opacity: 0.7;
-    transform: none;
-    box-shadow: none;
     
     &:hover {
       background: #ccc;
@@ -78,18 +72,6 @@ button[outline] {
   
   &:hover {
     background: #6c757d;
-    color: white;
-  }
-}
-
-// Primary button variant (explicit)
-.btn-primary,
-button[color="primary"] {
-  background: linear-gradient(135deg, #005caa, #003e7a);
-  color: white;
-  
-  &:hover {
-    background: linear-gradient(135deg, #003e7a, #002855);
     color: white;
   }
 }
@@ -131,19 +113,6 @@ button[color="primary"] {
 // Contact submit button specific styles
 .contact-submit-btn {
   margin-top: 1rem;
-}
-
-// Certificates page button specific styles
-.machx-button-container .btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    box-shadow: 0 4px 12px rgba(0, 92, 170, 0.3);
-  }
 }
 
 // Responsive adjustments
