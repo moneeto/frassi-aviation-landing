@@ -119,7 +119,129 @@
   letter-spacing: 0.01em;
 }
 
+.simple-certificate-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 91, 170, 0.448);
+  padding: 1.1rem 2.8rem 1.1rem 2.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  max-width: 900px;
+  width: 100%;
+  min-height: 110px;
+  margin: 0 auto;
+}
+
+.simple-certificate-icon {
+  margin-right: 1.3rem;
+  font-size: 2.2rem !important;
+  color: #005caa;
+  flex-shrink: 0;
+}
+
+.simple-certificate-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #005caa;
+}
+
+.simple-certificate-desc {
+  font-size: 1.01rem;
+  color: #595959;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.simple-certificate-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Estilos para la nueva estructura con dos secciones lado a lado
+.certificates-machx-section {
+  padding: 3rem 0;
+  background: transparent;
+  
+  .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.certificates-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background: transparent;
+  padding: 0 1rem;
+  
+}
+
+.machx-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background: transparent;
+  padding: 0 1rem;
+
+}
+
+.machx-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  
+  .machx-logo {
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.machx-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  // Button styles are now handled globally in global.scss
+}
+
 @media (max-width: 900px) {
+  .certificates-machx-section {
+    .row .row {
+      flex-direction: column !important;
+    }
+    
+    .col-md-6 {
+      width: 100% !important;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .certificates-section,
+  .machx-section {
+    align-items: center;
+    text-align: center;
+    
+    h2, h3, p {
+      text-align: center;
+    }
+  }
+  
   .certificates-row {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -156,5 +278,35 @@
   .machx-content-col a {
     display: block;
     text-align: center;
+  }
+  .simple-certificate-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.1rem 1rem;
+    max-width: 98vw;
+    min-height: 0;
+  }
+  .simple-certificate-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  .simple-certificate-title {
+    font-size: 1.05rem;
+  }
+  .simple-certificate-desc {
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .simple-certificate-card {
+    padding: 0.7rem 0.6rem;
+    max-width: 98vw;
+  }
+  .simple-certificate-title {
+    font-size: 1rem;
+  }
+  .simple-certificate-desc {
+    font-size: 0.93rem;
   }
 }

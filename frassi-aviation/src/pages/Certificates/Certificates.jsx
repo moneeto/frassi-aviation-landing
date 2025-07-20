@@ -2,28 +2,43 @@ import './Certificates.scss';
 import { Row, Col, Button } from 'reactstrap';
 import aboutUsImage_1 from '../../assets/aboutUsImage_1.png';
 import aboutUsImage_2 from '../../assets/aboutUsImage_2.jpg';
-import { FaCertificate } from 'react-icons/fa';
+import { FaCertificate, FaTools, FaPlane, FaFileAlt } from 'react-icons/fa';
 import React from 'react';
 import machxlogo from '../../assets/MACHX.png';
+
 // Datos de los certificados
 const certificatesData = [
   {
     id: 1,
-    image: aboutUsImage_1,
-    description: "Certificado de calidad internacional.",
-    icon: <FaCertificate />
+    title: "Certifications & FAA Authorizations",
+    icon: <FaCertificate />,
+    description: (
+      <>FAA credentials and authorizations to perform high-standard maintenance, repairs, and airworthiness documentation. Full compliance, safety, and professionalism.</>
+    )
   },
   {
     id: 2,
-    image: aboutUsImage_2,
-    description: "Certificado de seguridad aeronáutica.",
-    icon: <FaCertificate />
+    title: "FAA-Certified Maintenance",
+    icon: <FaCertificate />,
+    description: (
+      <>A&P and IA certified. Annuals, 100-hour inspections, major repairs, troubleshooting, and AD compliance for a wide range of aircraft.</>
+    )
   },
   {
     id: 3,
-    image: aboutUsImage_1, // Re-usando imagen como en el original
-    description: "Certificado de excelencia en servicio.",
-    icon: <FaCertificate />
+    title: "Operational Scope",
+    icon: <FaCertificate />,
+    description: (
+      <>Single & multi-engine, high-performance, twins, turboprops, experimentals. Full support for general aviation and special airworthiness.</>
+    )
+  },
+  {
+    id: 4,
+    title: "Structural & Documentation",
+    icon: <FaCertificate />,
+    description: (
+      <>Sheet metal repairs, custom fabrication, logbook entries, FAA Form 337, and digital/physical compliance tracking.</>
+    )
   }
 ];
 
@@ -46,57 +61,96 @@ const MinimalCertificateItem = ({ description, icon }) => (
   </div>
 );
 
-const Certificates = () => {
-    return (
-        <section id="certificates" className="certificates-section">
-            <Row className="certificates-row">
-                {/* Columna de Certificados */}
-                <Col xs="12" md="7" className="certificates-content-col" order={{ xs: 1, md: 1 }}>
-                    <h2 className="font-secondary">Quality is guaranteed by our</h2>
-                    <h3 className="font-primary"><b>CERTIFICATES</b></h3>
-                    <p>We dispose this certificates to guarantee the quality and confident of the services we provides</p>
-                    
-                    {/* Vista Desktop: Tarjetas */}
-                    <Row className="justify-content-center d-none d-md-flex">
-                        {certificatesData.map(cert => (
-                            <Col sm="6" lg="4" key={cert.id} className="mb-4">
-                                <CertificateCard 
-                                    image={cert.image} 
-                                    description={cert.description} 
-                                    icon={cert.icon} 
-                                />
-                            </Col>
-                        ))}
-                    </Row>
+// Nuevo formato de card simple con icono, título y descripción
+const SimpleCertificateCard = ({ title, description, icon }) => (
+  <div className="simple-certificate-card d-flex flex-column align-items-center justify-content-center p-4 mb-4">
+    <span className="simple-certificate-icon mb-2">{React.cloneElement(icon, { size: 40, color: "#005caa" })}</span>
+    <h5 className="simple-certificate-title mb-2 text-center">{title}</h5>
+    <p className="simple-certificate-desc text-center">{description}</p>
+  </div>
+);
 
-                    {/* Vista Mobile: Lista Minimalista */}
-                    <div className="d-md-none mt-4">
-                        {certificatesData.map(cert => (
-                            <MinimalCertificateItem 
-                                key={cert.id} 
-                                description={cert.description} 
-                                icon={cert.icon} 
-                            />
-                        ))}
-                    </div>
-                </Col>
-
-                {/* Columna de MACH X */}
-                <Col xs="12" md="5" className="machx-content-col" order={{ xs: 2, md: 2 }}>
-                    <h2 className="font-secondary">The operative right hand</h2>
-                    <h3 className="font-primary"><b>MACH X</b></h3>
-                    <p>We work together in the smart and logistical integration with the hangars</p>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non ligula non sapien laoreet rhoncus vel vel arcu. Sed vel ex euismod, aliquet lorem a, varius turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    <img src={machxlogo} alt="Mach X integration" className="aboutus-image img-fluid" loading="lazy" />
-                    <br />
-                    <a href="https://www.machx.it/" target="_blank" rel="noopener noreferrer" className="d-flex justify-content-center">
-                        <Button color="primary"><b>LEARN MORE ABOUT MACH X</b></Button>
-                    </a>
-                </Col>
-            </Row>
-        </section>
-    );
+// Componente para la sección de certificados (lado izquierdo)
+const CertificatesSection = () => {
+  return (
+    <div className="certificates-section">
+      <h2 className="font-secondary">Quality is guaranteed by our</h2>
+      <h3 className="font-primary"><b>CERTIFICATES</b></h3>
+      <p>We dispose these certificates to guarantee the quality and confidence of the services we provide</p>
+      
+      {/* Certificados en fila: dos arriba, dos abajo */}
+      <Row className="justify-content-center">
+        {/* Primera fila: dos certificados */}
+        <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
+          <SimpleCertificateCard 
+            title={certificatesData[0].title}
+            description={certificatesData[0].description}
+            icon={certificatesData[0].icon}
+          />
+        </Col>
+        <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
+          <SimpleCertificateCard 
+            title={certificatesData[1].title}
+            description={certificatesData[1].description}
+            icon={certificatesData[1].icon}
+          />
+        </Col>
+        <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
+          <SimpleCertificateCard 
+            title={certificatesData[2].title}
+            description={certificatesData[2].description}
+            icon={certificatesData[2].icon}
+          />
+        </Col>
+        <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
+          <SimpleCertificateCard 
+            title={certificatesData[3].title}
+            description={certificatesData[3].description}
+            icon={certificatesData[3].icon}
+          />
+        </Col>
+      </Row>
+    </div>
+  );
 };
 
-export default Certificates; 
+// Componente para la sección de Mach X (lado derecho)
+const MachXSection = () => (
+  <div className="machx-section">
+    <h2 className="font-secondary">The operative right hand</h2>
+    <h3 className="font-primary"><b>MACH X</b></h3>
+    <p className="text-justify">
+      We work together in the smart and logistical integration with the hangars. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <div className="machx-logo-container">
+      <img src={machxlogo} alt="Mach X integration" className="machx-logo" loading="lazy" />
+    </div>
+    <div className="machx-button-container">
+      <a href="https://www.machx.it/" target="_blank" rel="noopener noreferrer">
+        <Button color="primary"><b>LEARN MORE ABOUT MACH X</b></Button>
+      </a>
+    </div>
+  </div>
+);
+
+// Componente principal que combina ambas secciones
+const CertificatesAndMachX = () => {
+  return (
+    <section id="certificates" className="certificates-machx-section">
+      <Row className="align-items-start justify-content-center" style={{ minHeight: '500px' }}>
+        <Col xs="12" md="11" lg="10" className="d-flex align-items-start justify-content-center">
+          <Row className="w-100">
+            <Col md="6" className="d-flex align-items-start justify-content-center">
+              <CertificatesSection />
+            </Col>
+            <Col md="6" className="d-flex align-items-start justify-content-center">
+              <MachXSection />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </section>
+  );
+};
+
+export default CertificatesAndMachX; 

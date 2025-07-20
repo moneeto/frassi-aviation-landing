@@ -4,13 +4,13 @@ import logo from '../assets/FrassiLogo.jpeg';
 import { Button } from 'reactstrap';
 
 const sections = [
-  { id: 'home', label: 'HOME' },
-  { id: 'aboutus', label: 'ABOUT US' },
-  { id: 'services', label: 'SERVICES' },
-  { id: 'clientinquiry', label: 'CLIENT INQUIRY' },
-  { id: 'gallery', label: 'GALLERY' },
-  { id: 'partners', label: 'PARTNERS' },
-  { id: 'contact', label: 'CONTACT', isButton: true },
+  { id: 'home', label: 'Home' },
+  { id: 'aboutus', label: 'About Us' },
+  { id: 'services', label: 'Services' },
+  { id: 'gallery', label: 'Gallery' },
+  { id: 'clientinquiry', label: 'Client Inquiry' },
+  { id: 'partners', label: 'Partners' },
+  { id: 'contact', label: 'Contact', isButton: true },
 ];
 
 const Navbar = () => {
@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="FRASSI AVIATION" loading="lazy" />
+        <a href="#home"><img src={logo} alt="FRASSI AVIATION" loading="lazy" /></a>
       </div>
       <div className={`navbar-burger${open ? ' open' : ''}`} onClick={() => setOpen(!open)}>
         <span className="bar"></span>
@@ -64,7 +64,7 @@ const Navbar = () => {
             {section.isButton ? (
               <a
                 href={`#${section.id}`}
-                className={activeSection === section.id ? 'active' : ''}
+                className={`contact-button-link ${activeSection === section.id ? 'active' : ''}`}
                 onClick={e => handleNavClick(e, section.id)}
               >
                 <Button color='primary'>Contact</Button>

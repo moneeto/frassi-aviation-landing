@@ -1,69 +1,94 @@
-import { Row, Col, Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { Row, Col } from 'reactstrap';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaClock } from 'react-icons/fa';
 import './Contact.scss';
 
 const Contact = () => {
   return (
-    <section id="contact" style={{ minHeight: '100vh' }}>
-      <h2 className="contact-title font-primary-white"><b>CONTACT</b></h2>
-      <Row className="contact-row">
-        <Col md="6" className="contact-info-col">
-          <div className="contact-info-box">
-            <div className="contact-info-item">
-              <FaMapMarkerAlt className="contact-icon" />
-              <div>
-                <b>Our location</b>
-                <div>4089 NW 135 Street Opa-locka,<br />Florida 33054 United States</div>
-              </div>
-            </div>
-            <div className="contact-info-item">
-              <FaPhoneAlt className="contact-icon" />
-              <div>
-                <b>Phone number</b>
-                <div>1844 - FRASSI</div>
-              </div>
-            </div>
-            <div className="contact-info-item">
-              <FaEnvelope className="contact-icon" />
-              <div>
-                <b>Email address</b>
-                <div>frassi@aviation.com</div>
-              </div>
-            </div>
-          </div>
-        </Col>
-        <Col md="6" className="contact-form-col">
-          <div className="contact-form-box">
-            <h3 className="font-secondary">Get your</h3>
-            <h2 className="font-primary"><b>QUOTE</b></h2>
-            <Form className="contact-form">
-              <FormGroup>
-                <Label for="name">Full name</Label>
-                <Input type="text" name="name" id="name" required />
-              </FormGroup>
-              <div className="custom-form-row">
-                <div className="custom-form-group">
-                    <Label for="phone">Phone</Label>
-                    <Input type="text" name="phone" id="phone" required />
+    <section id="contact" className="contact-section">
+      <div className="container">
+        <div className="contact-header">
+          <h3 className="font-secondary">Get in touch with us for all your aviation needs</h3>
+          <h2 className="font-primary"><b>CONTACT US</b></h2>
+        </div>
+        
+        <div className="contact-main-content">
+          <Row className="contact-row">
+            <Col lg="4" md="12" className="contact-info-sidebar">
+              <div className="contact-info-card">
+                <h3 className="font-primary"></h3>
+                <div className="contact-details">
+                  <div className="contact-item">
+                    <FaMapMarkerAlt className="contact-icon" />
+                    <div className="contact-text">
+                      <span className="contact-label">Address</span>
+                      <span className="contact-value">4089 NW 135 Street<br />Opa-locka, Florida 33054<br />United States</span>
+                    </div>
+                  </div>
+                  
+                  <div className="contact-item">
+                    <FaPhoneAlt className="contact-icon" />
+                    <div className="contact-text">
+                      <span className="contact-label">Phone</span>
+                      <span className="contact-value">1-844-FRASSI<br />(1-844-372-7744)</span>
+                    </div>
+                  </div>
+                  
+                  <div className="contact-item">
+                    <FaEnvelope className="contact-icon" />
+                    <div className="contact-text">
+                      <span className="contact-label">Email</span>
+                      <span className="contact-value">frassi@aviation.com</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="custom-form-group">
-                    <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" required />
+
+                <hr className="contact-divider" />
+                
+                <div className="business-hours">
+                  <h4 className="hours-title">Our Business Hours</h4>
+                  <div className="hours-list">
+                    <div className="hours-item">
+                      <span className="day">Monday - Friday</span>
+                      <span className="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div className="hours-item">
+                      <span className="day">Saturday</span>
+                      <span className="time">9:00 AM - 3:00 PM</span>
+                    </div>
+                    <div className="hours-item">
+                      <span className="day">Sunday</span>
+                      <span className="time">Closed</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <FormGroup>
-                <Label for="subject">Subject</Label>
-                <Input type="text" name="subject" id="subject" required />
-              </FormGroup>
-              <FormGroup>
-                <Label for="message">Message</Label>
-                <Input type="textarea" name="message" id="message" rows="3" required />
-              </FormGroup>
-              <Button color="primary" type="submit" className="contact-submit-btn"><b>SUBMIT</b></Button>
-            </Form>
-          </div>
-        </Col>
-      </Row>
+            </Col>
+            
+            <Col lg="8" md="12" className="contact-form-sidebar">
+              <div className="contact-form-card">
+                <h3 className="font-primary">Get in Touch</h3>
+                <div className="form-divider"></div>
+                <p className="form-subtitle font-secondary">Feel free to drop us a line below!</p>
+                
+                <div className="contact-form">
+                  <div className="form-group">
+                    <input type="text" placeholder="Your Name" className="form-input" />
+                  </div>
+                  <div className="form-group">
+                    <input type="email" placeholder="Your Email" className="form-input" />
+                  </div>
+                  <div className="form-group">
+                    <textarea placeholder="Type your message here..." className="form-textarea" rows="4"></textarea>
+                  </div>
+                  <button type="submit" className="submit-btn font-primary">
+                    <b>SEND</b>
+                  </button>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </div>
     </section>
   );
 };

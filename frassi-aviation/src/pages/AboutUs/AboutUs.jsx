@@ -15,8 +15,8 @@ const AboutUs = () => {
           <div className="aboutus-box-content">
             <h2 className="font-secondary">Who are we?</h2>
             <h3 className="font-primary"><b>FRASSI AVIATION</b></h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non ligula non sapien laoreet rhoncus vel vel arcu. Sed vel ex euismod, aliquet lorem a, varius turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <p style={{ textAlign: 'justify' }}>
+              Frassi Aviation is a company dedicated to aircraft mechanics and maintenance, founded and led by Ayrton, a mechanic with over 10 years of experience in the industry. We specialize in providing comprehensive solutions for the care, repair, and improvement of airplanes, ensuring maximum safety and efficiency on every flight. Our commitment is to support our clients at every stage, from diagnosis to delivery, with professionalism and a true passion for aviation.
             </p>
           </div>
         </Col>
@@ -31,19 +31,19 @@ const AboutUs = () => {
               <div className="aboutus-box2-icons">
                 <Row>
                   <Col md="6">
-                    <p>
-                      <FaPlane /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <p style={{ textAlign: 'justify' }}>
+                      <FaPlane /> Our mission is to ensure that every aircraft that passes through our hands flies with the highest safety and performance, exceeding industry standards.
                     </p>
-                    <p>
-                      <FaUser /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <p style={{ textAlign: 'justify' }}>
+                      <FaUser /> We are driven by our clients' trust and a passion for technical excellence, building long-lasting relationships based on transparency and commitment.
                     </p>
                   </Col>
                   <Col md="6">
-                    <p>
-                      <FaPlane /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <p style={{ textAlign: 'justify' }}>
+                      <FaPlane /> Vision: To be the leading reference workshop in aeronautical maintenance in the region, recognized for quality, innovation, and personalized attention.
                     </p>
-                    <p>
-                      <FaUser /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <p style={{ textAlign: 'justify' }}>
+                      <FaUser /> Values: Integrity, dedication, continuous improvement, and a deep respect for safety and human life.
                     </p>
                   </Col>
                 </Row>

@@ -5,17 +5,25 @@
   width: 100%;
   height: 80px;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   z-index: 9999 !important;
   display: flex;
   align-items: center;
   padding: 0 2.5rem 0 2rem;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .navbar-logo img {
   height: 56px;
   width: auto;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .navbar-links {
@@ -29,22 +37,62 @@
 }
 
 .navbar-links li a {
-  color: #555555;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.2s;
-}
-
-.navbar-links li a:hover {
-  color: #005caa;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 .navbar-links li a.active {
-  color: #005caa;
-  border-bottom: 4px solid #005caa;
-  font-weight: bold;
-  background: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  
+  &::before {
+    width: 80%;
+  }
+}
+
+// Quitar underline específicamente para enlaces que contienen botones
+.navbar-links li a:has(.btn),
+.navbar-links li a.active:has(.btn) {
+  &::before {
+    display: none !important;
+  }
+}
+
+// Alternativa para navegadores que no soportan :has()
+.navbar-links li a .btn {
+  &::before {
+    display: none !important;
+  }
+}
+
+// Estilo específico para el enlace del botón de Contact
+.contact-button-link,
+.contact-button-link.active {
+  &::before {
+    display: none !important;
+  }
 }
 
 .navbar-burger {
@@ -54,36 +102,109 @@
   gap: 5px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(0, 92, 170, 0.05);
+  }
 }
 
 .navbar-burger .bar {
   width: 28px;
   height: 3px;
-  background: #174a87;
+  background: var(--color-primary);
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+}
+
+.navbar-burger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 @media (max-width: 900px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  
   .navbar-links {
     position: fixed;
     top: 80px;
     left: 0;
     width: 100vw;
-    background: #fff;
+    height: auto;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem 2rem;
     gap: 1.2rem;
     transform: translateY(-120%);
-    transition: transform 0.3s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+    li {
+      width: 100%;
+      
+      a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        
+        &:hover {
+          background: rgba(0, 92, 170, 0.1);
+          transform: translateX(5px);
+        }
+        
+        &::before {
+          display: none;
+        }
+      }
+    }
   }
+  
   .navbar-links.open {
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
+  
   .navbar-burger {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navbar-logo img {
+    height: 48px;
+  }
+  
+  .navbar-links {
+    padding: 1rem;
+    
+    li a {
+      padding: 0.8rem;
+      font-size: 1rem;
+    }
   }
 }

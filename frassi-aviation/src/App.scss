@@ -1,33 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500;700&display=swap');
+@use './styles/global.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-primary: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-primary: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;
   --font-secondary: 'Lobster', cursive;
+  --color-primary: #005caa;
+  --color-primary-dark: #003e7a;
+  --color-primary-light: #64b5f6;
+  --color-secondary: #6c757d;
+  --color-text: #2c3e50;
+  --color-text-light: #6c757d;
+  --color-background: #f8f9fa;
+  --color-white: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
   overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-primary);
   scroll-behavior: smooth;
+  background: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
 .font-primary {
   font-family: var(--font-primary) !important;
-  color: #005caa;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 92, 170, 0.1);
 }
+
 .font-secondary, .lobster {
   font-family: var(--font-secondary) !important;
-  color: #444444;
-  font-size: 1.3rem;
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
 .font-primary-white {
   font-family: var(--font-primary) !important;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
 }
 
 p {
   font-family: var(--font-primary);
-  color: #595959;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+// Efectos de hover modernos para enlaces
+a {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+// Contenedores modernos
+.modern-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
 } 

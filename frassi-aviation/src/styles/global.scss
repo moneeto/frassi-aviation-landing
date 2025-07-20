@@ -1,0 +1,179 @@
+// Global Button Styles for Frassi Aviation
+// This file standardizes all buttons across the application
+
+// Base button styles
+.btn,
+button,
+.submit-btn,
+.home-button,
+.contact-submit-btn,
+.modal-btn {
+  // Common properties
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  
+  // Default colors (primary blue theme)
+  background: linear-gradient(135deg, #005caa, #003e7a);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #003e7a, #002855);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 92, 170, 0.3);
+    color: white;
+    text-decoration: none;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 92, 170, 0.3);
+  }
+  
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+    
+    &:hover {
+      background: #ccc;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// Secondary button variant
+.btn-secondary,
+button[color="secondary"] {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #5a6268, #495057);
+    color: white;
+  }
+}
+
+// Outline button variant
+.btn-outline-secondary,
+button[outline] {
+  background: transparent;
+  border: 2px solid #6c757d;
+  color: #6c757d;
+  
+  &:hover {
+    background: #6c757d;
+    color: white;
+  }
+}
+
+// Primary button variant (explicit)
+.btn-primary,
+button[color="primary"] {
+  background: linear-gradient(135deg, #005caa, #003e7a);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #003e7a, #002855);
+    color: white;
+  }
+}
+
+// Large button variant
+.btn-lg,
+.home-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  min-height: 52px;
+}
+
+// Small button variant
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  min-height: 36px;
+}
+
+// Full width button
+.btn-block,
+.submit-btn,
+.contact-submit-btn {
+  width: 100%;
+}
+
+// Modal button specific styles
+.modal-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+// Home page button specific styles
+.home-button {
+  max-width: 200px;
+  margin: 0.5rem;
+}
+
+// Contact submit button specific styles
+.contact-submit-btn {
+  margin-top: 1rem;
+}
+
+// Certificates page button specific styles
+.machx-button-container .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 92, 170, 0.3);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .btn,
+  button,
+  .submit-btn,
+  .home-button,
+  .contact-submit-btn,
+  .modal-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
+    min-height: 40px;
+  }
+  
+  .btn-lg,
+  .home-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  
+  .home-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    
+    .home-button {
+      max-width: 100%;
+    }
+  }
+} 

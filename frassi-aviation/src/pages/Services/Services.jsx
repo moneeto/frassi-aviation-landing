@@ -7,7 +7,7 @@ import img3 from '../../assets/services3.jpg';
 
 const Services = () => {
   return (
-    <section id="services" style={{ minHeight: '100vh' }}>
+    <section id="services">
       <Row>
         <div className="services-title">
           <h2 className="font-secondary">We offer these</h2>
@@ -47,7 +47,7 @@ const Services = () => {
                 <td>
                   <ul className="list-unstyled mb-0">
                     <li>Mobile On-Site Service</li>
-                    <li>Parts & Supplies (AirFrassi Repair como partner)</li>
+                    <li>Parts & Supplies (AirFrassi Repair as partner)</li>
                     <li>Assistance for Aircraft Sales</li>
                     <li>Operational Support for Schools / Operators</li>
                   </ul>
@@ -55,15 +55,6 @@ const Services = () => {
               </tr>
             </tbody>
           </Table>
-          <div className="services-images">
-            <img src={img1} alt="Services" loading="lazy" />
-            <img src={img2} alt="Services" loading="lazy" />
-            <img src={img3} alt="Services" loading="lazy" />
-          </div>
-          <div className="d-flex flex-column align-items-center justify-content-center mb-5">
-            <h2 className="font-secondary">Check our projects and clients witnesses</h2>
-            <Button color="primary" onClick={() => window.location.href = '#gallery'}><b>SEE THE GALLERY</b></Button>
-          </div>
         </Col>
       </Row>
     </section>
