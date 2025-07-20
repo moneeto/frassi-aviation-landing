@@ -1,0 +1,206 @@
+.legal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.legal-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+  position: relative;
+}
+
+.legal-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  
+  h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  
+  .modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    
+    &:hover {
+      background: rgba(102, 126, 234, 0.1);
+      color: #667eea;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.legal-modal-content {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: calc(80vh - 120px);
+  
+  h4 {
+    color: #667eea;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    border-left: 4px solid #667eea;
+    padding-left: 1rem;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  p {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    
+    li {
+      color: #2c3e50;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  .legal-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 0.8rem;
+    border-left: 4px solid #667eea;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .legal-highlight {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    margin: 1rem 0;
+    
+    p {
+      margin: 0;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .legal-modal {
+    max-height: 90vh;
+    margin: 1rem;
+  }
+  
+  .legal-modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .legal-modal-content {
+    padding: 1.5rem;
+    max-height: calc(90vh - 100px);
+    
+    h4 {
+      font-size: 1.2rem;
+    }
+    
+    .legal-section {
+      padding: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .legal-modal {
+    margin: 0.5rem;
+  }
+  
+  .legal-modal-header {
+    padding: 1rem 1rem 0.5rem;
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .legal-modal-content {
+    padding: 1rem;
+    
+    h4 {
+      font-size: 1.1rem;
+    }
+  }
+} 

@@ -1,34 +1,68 @@
 import './Home.scss';
 import backgroundImage from '../../assets/avionHOME.jpg';
 import { Button } from 'reactstrap';
+import { FaRocket, FaArrowRight } from 'react-icons/fa';
 
 const Home = () => {
-
-
   return (
     <section id="home" style={{ minHeight: '100vh' }}>
       <div className="background-image" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="home-box">
-          <div className="home-box-content"> 
-            <h3 className="font-secondary">Welcome to</h3>
-            <h1 className="font-primary"><b>FRASSI AVIATION</b></h1>
-            <br />
-            <p>Precision. Commitment. Aviation Excellence</p>
+        <div className="home-container">
+          {/* Hero Section - Título principal prominente */}
+          <div className="hero-section">
+            <div className="hero-content">
+              <div className="hero-badge">
+                <FaRocket className="hero-icon" />
+                <span>Welcome to</span>
+              </div>
+              <h1 className="hero-title">
+                <span className="title-main">FRASSI AVIATION</span>
+                <span className="title-subtitle">Precision. Commitment. Aviation Excellence</span>
+              </h1>
+              <p className="hero-description">
+                Your trusted partner in aviation services, delivering exceptional quality and reliability in every project.
+              </p>
+            </div>
           </div>
-          <div className="home-buttons">
-            <Button color="secondary" outline className="home-button" onClick={() => window.location.href = '#services'}>
-              <b>SEARCH IN SERVICES</b>
+
+          {/* Action Buttons - Diseño minimalista */}
+          <div className="action-buttons">
+            <Button 
+              color="primary" 
+              className="action-button primary"
+              onClick={() => window.location.href = '#services'}
+            >
+              <span>Explore Services</span>
+              <FaArrowRight className="button-icon" />
             </Button>
-            <Button color="primary"className="home-button" onClick={() => window.location.href = '#aboutus'}>
-              <b>LEARN MORE</b>
+            
+            <Button 
+              outline 
+              color="primary" 
+              className="action-button secondary"
+              onClick={() => window.location.href = '#clientinquiry'}
+            >
+              <span>Get Quote</span>
+              <FaArrowRight className="button-icon" />
             </Button>
           </div>
-          <hr />
-          <div className="home-box-content">
-            <p>Do you need advice or want to start a inquiry?</p>
-            <Button color="primary" className="home-button" onClick={() => window.location.href = '#clientinquiry'}>
-              <b>REQUEST A QUOTE</b>
-            </Button>
+
+          {/* Quick Stats - Minimalista */}
+          <div className="quick-stats">
+            <div className="stat-item">
+              <div className="stat-number">15+</div>
+              <div className="stat-label">Years</div>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <div className="stat-number">500+</div>
+              <div className="stat-label">Projects</div>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <div className="stat-number">100%</div>
+              <div className="stat-label">Satisfaction</div>
+            </div>
           </div>
         </div>
       </div>

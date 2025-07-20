@@ -276,13 +276,12 @@
     
     &:hover:not(:disabled) {
       background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
-      transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(23, 74, 135, 0.3);
       color: white !important;
     }
     
     &:active {
-      transform: translateY(0);
+      // No transform needed
     }
     
     &:disabled {

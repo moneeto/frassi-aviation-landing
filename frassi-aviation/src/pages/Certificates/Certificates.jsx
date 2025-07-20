@@ -70,7 +70,7 @@ const SimpleCertificateCard = ({ title, description, icon }) => (
   </div>
 );
 
-// Componente para la sección de certificados (lado izquierdo)
+// Componente para la sección de certificados
 const CertificatesSection = () => {
   return (
     <div className="certificates-section">
@@ -78,43 +78,45 @@ const CertificatesSection = () => {
       <h3 className="font-primary"><b>CERTIFICATES</b></h3>
       <p>We dispose these certificates to guarantee the quality and confidence of the services we provide</p>
       
-      {/* Certificados en fila: dos arriba, dos abajo */}
-      <Row className="justify-content-center">
-        {/* Primera fila: dos certificados */}
-        <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
-          <SimpleCertificateCard 
-            title={certificatesData[0].title}
-            description={certificatesData[0].description}
-            icon={certificatesData[0].icon}
-          />
-        </Col>
-        <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
-          <SimpleCertificateCard 
-            title={certificatesData[1].title}
-            description={certificatesData[1].description}
-            icon={certificatesData[1].icon}
-          />
-        </Col>
-        <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
-          <SimpleCertificateCard 
-            title={certificatesData[2].title}
-            description={certificatesData[2].description}
-            icon={certificatesData[2].icon}
-          />
-        </Col>
-        <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
-          <SimpleCertificateCard 
-            title={certificatesData[3].title}
-            description={certificatesData[3].description}
-            icon={certificatesData[3].icon}
-          />
-        </Col>
-      </Row>
+      {/* Certificados en formato 2x2 para pantallas grandes, columna para pequeñas */}
+      <div className="certificates-grid">
+        <Row className="justify-content-center">
+          {/* Primera fila: dos certificados */}
+          <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
+            <SimpleCertificateCard 
+              title={certificatesData[0].title}
+              description={certificatesData[0].description}
+              icon={certificatesData[0].icon}
+            />
+          </Col>
+          <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
+            <SimpleCertificateCard 
+              title={certificatesData[1].title}
+              description={certificatesData[1].description}
+              icon={certificatesData[1].icon}
+            />
+          </Col>
+          <Col xs="12" md="6" className="mb-4 d-flex justify-content-end">
+            <SimpleCertificateCard 
+              title={certificatesData[2].title}
+              description={certificatesData[2].description}
+              icon={certificatesData[2].icon}
+            />
+          </Col>
+          <Col xs="12" md="6" className="mb-4 d-flex justify-content-start">
+            <SimpleCertificateCard 
+              title={certificatesData[3].title}
+              description={certificatesData[3].description}
+              icon={certificatesData[3].icon}
+            />
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };
 
-// Componente para la sección de Mach X (lado derecho)
+// Componente para la sección de Mach X
 const MachXSection = () => (
   <div className="machx-section">
     <h2 className="font-secondary">The operative right hand</h2>
@@ -137,16 +139,17 @@ const MachXSection = () => (
 const CertificatesAndMachX = () => {
   return (
     <section id="certificates" className="certificates-machx-section">
-      <Row className="align-items-start justify-content-center" style={{ minHeight: '500px' }}>
-        <Col xs="12" md="11" lg="10" className="d-flex align-items-start justify-content-center">
-          <Row className="w-100">
-            <Col md="6" className="d-flex align-items-start justify-content-center">
-              <CertificatesSection />
-            </Col>
-            <Col md="6" className="d-flex align-items-start justify-content-center">
-              <MachXSection />
-            </Col>
-          </Row>
+      <Row className="justify-content-center">
+        <Col xs="12" md="11" lg="10" className="d-flex flex-column flex-xl-row align-items-start">
+          {/* Sección de Certificados */}
+          <div className="certificates-container">
+            <CertificatesSection />
+          </div>
+          
+          {/* Sección de Mach X */}
+          <div className="machx-container">
+            <MachXSection />
+          </div>
         </Col>
       </Row>
     </section>

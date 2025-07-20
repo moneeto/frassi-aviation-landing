@@ -1,21 +1,16 @@
 import { Row, Col } from 'reactstrap';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
 import './Contact.scss';
 
 const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <div className="contact-header">
-          <h3 className="font-secondary">Get in touch with us for all your aviation needs</h3>
-          <h2 className="font-primary"><b>CONTACT US</b></h2>
-        </div>
-        
         <div className="contact-main-content">
-          <Row className="contact-row">
+          <Row>
             <Col lg="4" md="12" className="contact-info-sidebar">
               <div className="contact-info-card">
-                <h3 className="font-primary"></h3>
+                <h3 className="font-primary">Contact Information</h3>
                 <div className="contact-details">
                   <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon" />
@@ -66,9 +61,9 @@ const Contact = () => {
             
             <Col lg="8" md="12" className="contact-form-sidebar">
               <div className="contact-form-card">
-                <h3 className="font-primary">Get in Touch</h3>
+                <h3 className="font-primary">Send us a Message</h3>
                 <div className="form-divider"></div>
-                <p className="form-subtitle font-secondary">Feel free to drop us a line below!</p>
+                <p className="form-subtitle font-secondary">We'd love to hear from you!</p>
                 
                 <div className="contact-form">
                   <div className="form-group">
@@ -78,10 +73,10 @@ const Contact = () => {
                     <input type="email" placeholder="Your Email" className="form-input" />
                   </div>
                   <div className="form-group">
-                    <textarea placeholder="Type your message here..." className="form-textarea" rows="4"></textarea>
+                    <textarea placeholder="Tell us how we can help you..." className="form-textarea" rows="4"></textarea>
                   </div>
-                  <button type="submit" className="submit-btn font-primary">
-                    <b>SEND</b>
+                  <button type="submit" className="submit-btn">
+                    SEND MESSAGE
                   </button>
                 </div>
               </div>

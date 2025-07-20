@@ -19,11 +19,6 @@
   height: 56px;
   width: auto;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .navbar-links {
@@ -131,7 +126,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1037px) {
   .navbar {
     padding: 0 1.5rem;
   }

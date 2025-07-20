@@ -1,62 +1,85 @@
-import { Row, Col, Table, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import './Services.scss';
-import img1 from '../../assets/services1.jpg';
-import img2 from '../../assets/services2.jpg';
-import img3 from '../../assets/services3.jpg';
-
+import { FaTools, FaCog, FaWrench, FaPlane, FaClipboardCheck, FaOilCan, FaHammer, FaPuzzlePiece, FaTruck, FaHandshake, FaGraduationCap } from 'react-icons/fa';
 
 const Services = () => {
+  const servicesData = [
+    {
+      category: "MAINTENANCE",
+      icon: <FaTools />,
+      items: [
+        { text: "50/100 Hour Inspections", icon: <FaClipboardCheck /> },
+        { text: "Annual Inspections", icon: <FaClipboardCheck /> },
+        { text: "AD Compliance Checks", icon: <FaClipboardCheck /> },
+        { text: "FA Documentation & IA Sign-off", icon: <FaClipboardCheck /> },
+        { text: "Pre-Buy Inspections", icon: <FaClipboardCheck /> },
+        { text: "Oil Change", icon: <FaOilCan /> }
+      ]
+    },
+    {
+      category: "SPECIALITIES",
+      icon: <FaCog />,
+      items: [
+        { text: "Sheet Metal & Structural Repairs", icon: <FaHammer /> },
+        { text: "Aircraft Modifications (FAA Form 337)", icon: <FaPuzzlePiece /> },
+        { text: "Composite Work", icon: <FaWrench /> },
+        { text: "Fabric Recovering", icon: <FaPlane /> }
+      ]
+    },
+    {
+      category: "ADDITIONALIES",
+      icon: <FaHandshake />,
+      items: [
+        { text: "Mobile On-Site Service", icon: <FaTruck /> },
+        { text: "Parts & Supplies (AirFrassi Repair as partner)", icon: <FaHandshake /> },
+        { text: "Assistance for Aircraft Sales", icon: <FaHandshake /> },
+        { text: "Operational Support for Schools / Operators", icon: <FaGraduationCap /> }
+      ]
+    }
+  ];
+
   return (
     <section id="services">
-      <Row>
-        <div className="services-title">
-          <h2 className="font-secondary">We offer these</h2>
-          <h3 className="font-primary"><b>SERVICES</b></h3>
-        </div>
-      </Row>
-      <Row className="justify-content-center">
-        <Col md="10">
-          <Table bordered responsive className="text-center align-middle services-table-fixed">
-            <thead>
-              <tr className="services-table-header">
-                <th style={{backgroundColor: '#005caa', color: '#ffffff', fontSize: '1.2rem', fontWeight: '600'}}>MAINTENANCE</th>
-                <th style={{backgroundColor: '#005caa', color: '#ffffff', fontSize: '1.2rem', fontWeight: '600'}}>SPECIALITIES</th>
-                <th style={{backgroundColor: '#005caa', color: '#ffffff', fontSize: '1.2rem', fontWeight: '600'}}>ADDITIONALIES</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul className="list-unstyled mb-0">
-                    <li>50/100 Hour Inspections</li>
-                    <li>Annual Inspections</li>
-                    <li>AD Compliance Checks</li>
-                    <li>FA Documentation & IA Sign-off</li>
-                    <li>Pre-Buy Inspections</li>
-                    <li>Oil Change</li>
+      <div className="services-container">
+        <Row>
+          <div className="services-title">
+            <h2 className="font-secondary">We offer these</h2>
+            <h3 className="font-primary"><b>SERVICES</b></h3>
+          </div>
+        </Row>
+        
+        <Row>
+          {servicesData.map((service, index) => (
+            <Col lg="4" md="8" sm="12" key={index} className="service-card-col">
+              <div className="service-card">
+                <div className="service-card-header">
+                  <div className="service-icon-wrapper">
+                    {service.icon}
+                  </div>
+                  <h4 className="service-category">{service.category}</h4>
+                </div>
+                
+                <div className="service-card-body">
+                  <ul className="service-list">
+                    {service.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="service-item">
+                        <div className="service-item-icon">
+                          {item.icon}
+                        </div>
+                        <span className="service-item-text">{item.text}</span>
+                      </li>
+                    ))}
                   </ul>
-                </td>
-                <td>
-                  <ul className="list-unstyled mb-0">
-                    <li>Sheet Metal & Structural Repairs</li>
-                    <li>Aircraft Modifications (FAA Form 337)</li>
-                    <li>Composite Work</li>
-                    <li>Fabric Recovering</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul className="list-unstyled mb-0">
-                    <li>Mobile On-Site Service</li>
-                    <li>Parts & Supplies (AirFrassi Repair as partner)</li>
-                    <li>Assistance for Aircraft Sales</li>
-                    <li>Operational Support for Schools / Operators</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
-        </Col>
-      </Row>
+                </div>
+                
+                <div className="service-card-footer">
+                  <div className="service-card-accent"></div>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </div>
     </section>
   );
 };

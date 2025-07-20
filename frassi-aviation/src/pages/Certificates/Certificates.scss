@@ -74,11 +74,28 @@
 
 .certificates-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   background: transparent;
   padding: 3rem 0;
+  text-align: center;
+}
+
+.certificates-grid {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.certificates-container {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.machx-container {
+  width: 100%;
 }
 
 .certificates-row {
@@ -123,20 +140,24 @@
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 91, 170, 0.448);
-  padding: 1.1rem 2.8rem 1.1rem 2.8rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  min-width: 0;
-  max-width: 900px;
   width: 100%;
-  min-height: 110px;
-  margin: 0 auto;
+  min-height: 120px;
+  margin: 0 auto 1.5rem auto;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 91, 170, 0.6);
+  }
 }
 
 .simple-certificate-icon {
-  margin-right: 1.3rem;
+  margin-right: 1.5rem;
   font-size: 2.2rem !important;
   color: #005caa;
   flex-shrink: 0;
@@ -145,8 +166,9 @@
 .simple-certificate-title {
   font-size: 1.18rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   color: #005caa;
+  text-align: left;
 }
 
 .simple-certificate-desc {
@@ -154,7 +176,7 @@
   color: #595959;
   margin-bottom: 0;
   margin-top: 0;
-  line-height: 1.35;
+  line-height: 1.5;
   text-align: left;
 }
 
@@ -164,7 +186,7 @@
   justify-content: center;
 }
 
-// Estilos para la nueva estructura con dos secciones lado a lado
+// Estilos para la nueva estructura con secciones una debajo de la otra
 .certificates-machx-section {
   padding: 3rem 0;
   background: transparent;
@@ -175,26 +197,15 @@
   }
 }
 
-.certificates-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  background: transparent;
-  padding: 0 1rem;
-  
-}
-
 .machx-section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   background: transparent;
-  padding: 0 1rem;
-
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .machx-logo-container {
@@ -220,93 +231,124 @@
   // Button styles are now handled globally in global.scss
 }
 
-@media (max-width: 900px) {
-  .certificates-machx-section {
-    .row .row {
-      flex-direction: column !important;
-    }
+// Breakpoint para pantallas grandes (>1400px) - layout lado a lado con certificados 2x2
+@media (min-width: 1400px) {
+  .certificates-container {
+    width: 50%;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+  
+  .machx-container {
+    width: 50%;
+  }
+  
+  .certificates-section {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+  
+  .machx-section {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
     
-    .col-md-6 {
-      width: 100% !important;
-      margin-bottom: 3rem;
+    h2, h3, p {
+      text-align: left;
     }
   }
   
+  .certificates-grid {
+    max-width: 100%;
+  }
+  
+  .simple-certificate-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .simple-certificate-title {
+    text-align: left;
+  }
+  
+  .simple-certificate-desc {
+    text-align: left;
+  }
+}
+
+// Breakpoint para pantallas medianas y pequeñas (<1400px) - secciones una debajo de la otra
+@media (max-width: 1399px) {
   .certificates-section,
   .machx-section {
     align-items: center;
     text-align: center;
+    padding: 2rem 1rem;
     
     h2, h3, p {
       text-align: center;
     }
   }
   
-  .certificates-row {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .certificate-card {
+  .certificates-grid {
     max-width: 100%;
-    min-width: 0;
-    width: auto;
-    min-height: auto;
-    height: auto;
-    margin-bottom: 2rem;
+    
+    .row {
+      flex-direction: column !important;
+    }
+    
+    .col-md-6 {
+      width: 100% !important;
+      margin-bottom: 1rem;
+    }
   }
-  .certificate-card-img-wrapper {
-    min-height: 180px;
-    max-height: 250px;
-    height: 40vw;
-  }
-  .certificate-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .aboutus-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1rem auto;
-  }
-  .certificates-content-col h2, .certificates-content-col h3, .certificates-content-col p,
-  .machx-content-col h2, .machx-content-col h3, .machx-content-col p {
-    text-align: center;
-  }
-  .machx-content-col a {
-    display: block;
-    text-align: center;
-  }
+  
   .simple-certificate-card {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 1.1rem 1rem;
-    max-width: 98vw;
-    min-height: 0;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    margin-bottom: 1rem;
   }
+  
   .simple-certificate-icon {
     margin-right: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
+  
   .simple-certificate-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    text-align: center;
   }
+  
   .simple-certificate-desc {
-    font-size: 0.97rem;
+    font-size: 0.98rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 600px) {
-  .simple-certificate-card {
-    padding: 0.7rem 0.6rem;
-    max-width: 98vw;
+  .certificates-section,
+  .machx-section {
+    padding: 1.5rem 0.5rem;
   }
+  
+  .simple-certificate-card {
+    padding: 1rem 0.8rem;
+  }
+  
   .simple-certificate-title {
     font-size: 1rem;
   }
+  
   .simple-certificate-desc {
     font-size: 0.93rem;
+  }
+  
+  .machx-logo {
+    max-width: 240px !important;
   }
 }
