@@ -35,15 +35,15 @@
     border-radius: var(--border-radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--shadow-md);
-    padding: 2.5rem;
+    padding: 2rem;
     transition: all 0.3s ease;
     
     h2 {
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     h3 {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -52,9 +52,9 @@
     
     p {
         text-align: justify;
-        line-height: 1.8;
+        line-height: 1.6;
         color: var(--color-text-light);
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 }
 
@@ -100,6 +100,58 @@
     }
 }
 
+// Nueva estructura para Mission & Vision
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.mission-vision-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border-left: 3px solid var(--color-primary);
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 90px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .mission-vision-icon {
+        color: var(--color-primary);
+        font-size: 1rem;
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+    }
+    
+    .mission-vision-content {
+        flex: 1;
+        
+        h4 {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            color: var(--color-text-light);
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 0;
+            text-align: left;
+        }
+    }
+}
+
 // Animaciones
 .aboutus-box-1 {
     animation: fadeInUp 0.8s ease forwards;
@@ -128,17 +180,9 @@
 
 // Responsive design
 @media (max-width: 1400px) {
-    .mission-vision-section {
-        flex-direction: column;
-        
-        .col-lg-6 {
-            order: 1;
-            margin-bottom: 2rem;
-        }
-        
-        .col-lg-4 {
-            order: 2;
-        }
+    .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
     }
     
     .aboutus-box2-icons {
@@ -159,14 +203,38 @@
 
 @media (max-width: 768px) {
     .aboutus-box-1 {
-        padding: 4rem 1rem 0 1rem;
+        padding: 3rem 1rem 0 1rem;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
     .aboutus-box-content {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         border-radius: 16px;
+    }
+    
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    
+    .mission-vision-item {
+        padding: 0.8rem;
+        min-height: 100px;
+        
+        .mission-vision-icon {
+            font-size: 1rem;
+        }
+        
+        .mission-vision-content {
+            h4 {
+                font-size: 0.9rem;
+            }
+            
+            p {
+                font-size: 0.8rem;
+            }
+        }
     }
     
     .aboutus-box2-icons {
@@ -183,30 +251,53 @@
     }
     
     .aboutus-image {
-        max-width: 240px;
+        max-width: 220px;
         border-radius: 12px;
     }
 }
 
 @media (max-width: 480px) {
     .aboutus-box-1 {
-        padding: 4rem 0.5rem 0 0.5rem;
+        padding: 3rem 0.5rem 0 0.5rem;
     }
     
     .aboutus-box-content {
-        padding: 1.5rem 0.5rem;
+        padding: 1.2rem 0.5rem;
         border-radius: 12px;
         
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         
         h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
         
         p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+        }
+    }
+    
+    .mission-vision-grid {
+        gap: 0.5rem;
+    }
+    
+    .mission-vision-item {
+        padding: 0.6rem;
+        min-height: 90px;
+        
+        .mission-vision-icon {
+            font-size: 0.9rem;
+        }
+        
+        .mission-vision-content {
+            h4 {
+                font-size: 0.85rem;
+            }
+            
+            p {
+                font-size: 0.75rem;
+            }
         }
     }
     
@@ -220,7 +311,7 @@
     }
     
     .aboutus-image {
-        max-width: 200px;
+        max-width: 180px;
         border-radius: 8px;
     }
 }

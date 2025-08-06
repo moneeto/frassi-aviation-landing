@@ -10,6 +10,24 @@ const ClientInquiry = () => {
   const [status, setStatus] = useState('');
   const [modal, setModal] = useState({ show: false, message: '' });
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
+
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+    setSelectedFiles(files);
+  };
+
+  const formatFileSize = (bytes) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  };
+
+  const getTotalFileSize = () => {
+    return selectedFiles.reduce((total, file) => total + file.size, 0);
+  };
 
   const uploadImage = async (file) => {
     const formData = new FormData();
@@ -58,6 +76,7 @@ const ClientInquiry = () => {
 
       setStatus('success');
       form.current.reset();
+      setSelectedFiles([]);
       setModal({ show: true, message: 'The message has been sent successfully!' });
     } catch (error) {
       console.error('Error sending email:', error);
@@ -156,11 +175,16 @@ const ClientInquiry = () => {
                   
                   <div className="form-group">
                     <div className="file-upload-wrapper">
-                      <input type="file" name="photos" multiple className="file-input" id="file-input" />
+                      <input type="file" name="photos" multiple className="file-input" id="file-input" onChange={handleFileChange} />
                       <label htmlFor="file-input" className="file-label">
                         <FaCamera className="file-icon" />
                         <span>Upload Photos (Optional)</span>
                       </label>
+                      {selectedFiles.length > 0 && (
+                        <span className="file-count">
+                          {selectedFiles.length} {selectedFiles.length === 1 ? 'file' : 'files'} selected ({formatFileSize(getTotalFileSize())})
+                        </span>
+                      )}
                     </div>
                   </div>
                   

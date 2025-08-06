@@ -61,13 +61,13 @@ html, body {
 .home-container {
   width: min(100%, 1200px);
   margin: 0 auto;
-  padding: clamp(1rem, 4vw, 2rem);
-  padding-top: clamp(8rem, 15vw, 12rem); // Más espacio para el navbar fijo
+  padding: clamp(0.8rem, 3vw, 1.5rem);
+  padding-top: clamp(6rem, 12vw, 10rem); // Reducido el espacio superior
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1rem, 3vw, 2rem); // Reducido el gap
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh; // Reducido de 100vh a 90vh
   justify-content: center;
   box-sizing: border-box;
 }
@@ -90,27 +90,27 @@ html, body {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: clamp(25px, 6vw, 50px);
-    padding: clamp(0.4rem, 2vw, 0.6rem) clamp(0.8rem, 3vw, 1.2rem);
-    margin-bottom: clamp(1rem, 4vw, 2rem);
+    border-radius: clamp(20px, 5vw, 40px);
+    padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.6rem, 2.5vw, 1rem);
+    margin-bottom: clamp(0.8rem, 3vw, 1.5rem);
     font-family: var(--font-secondary);
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
     color: white;
     font-weight: 500;
     
     .hero-icon {
-      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
       color: var(--color-primary-light);
     }
   }
   
   .hero-title {
-    margin-bottom: clamp(1rem, 4vw, 2rem);
+    margin-bottom: clamp(0.8rem, 3vw, 1.5rem);
     
     .title-main {
       display: block;
       font-family: var(--font-primary);
-      font-size: clamp(2.5rem, 12vw, 6rem);
+      font-size: clamp(2rem, 10vw, 5rem);
       font-weight: 900;
       color: #ffffff;
       text-shadow: 
@@ -118,7 +118,7 @@ html, body {
         0 0 60px rgba(0, 92, 170, 0.6),
         0 2px 4px rgba(0, 0, 0, 0.5);
       letter-spacing: clamp(-0.05em, -0.1vw, -0.03em);
-      margin-bottom: clamp(0.5rem, 2vw, 1rem);
+      margin-bottom: clamp(0.4rem, 1.5vw, 0.8rem);
       line-height: 0.9;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -127,10 +127,10 @@ html, body {
     .title-subtitle {
       display: block;
       font-family: var(--font-secondary);
-      font-size: clamp(1rem, 4vw, 1.8rem);
+      font-size: clamp(0.9rem, 3.5vw, 1.5rem);
       color: var(--color-primary-light);
       font-weight: 400;
-      margin-top: clamp(0.3rem, 1vw, 0.5rem);
+      margin-top: clamp(0.2rem, 0.8vw, 0.4rem);
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -138,10 +138,10 @@ html, body {
   }
   
   .hero-description {
-    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     color: rgba(255, 255, 255, 0.95);
-    line-height: 1.6;
-    max-width: min(800px, 90vw);
+    line-height: 1.5;
+    max-width: min(700px, 85vw);
     margin: 0 auto;
     font-weight: 400;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -153,21 +153,21 @@ html, body {
 // Botones de acción - Dinámicos
 .action-buttons {
   display: flex;
-  gap: clamp(1rem, 3vw, 1.5rem);
+  gap: clamp(0.8rem, 2.5vw, 1.2rem);
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: min(600px, 90vw);
+  max-width: min(550px, 85vw);
   
   .action-button {
     position: relative;
     overflow: hidden;
-    border-radius: clamp(25px, 6vw, 50px);
+    border-radius: clamp(20px, 5vw, 40px);
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2.5rem);
-    min-height: clamp(44px, 8vw, 56px);
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
+    padding: clamp(0.7rem, 2.5vw, 0.9rem) clamp(1.2rem, 4vw, 2rem);
+    min-height: clamp(40px, 7vw, 50px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
     font-family: var(--font-primary);
@@ -175,16 +175,12 @@ html, body {
     letter-spacing: clamp(0.3px, 0.1vw, 0.5px);
     display: flex;
     align-items: center;
-    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    gap: clamp(0.4rem, 1.2vw, 0.7rem);
     white-space: nowrap;
     
     .button-icon {
-      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      font-size: clamp(0.7rem, 2.2vw, 0.9rem);
       transition: transform 0.3s ease;
-    }
-    
-    &:hover .button-icon {
-      transform: translateX(4px);
     }
     
     &.primary {
@@ -194,7 +190,6 @@ html, body {
       
       &:hover {
         box-shadow: 0 12px 32px rgba(0, 92, 170, 0.4);
-        transform: translateY(-3px);
       }
     }
     
@@ -207,7 +202,6 @@ html, body {
       &:hover {
         background: rgba(255, 255, 255, 0.2);
         border-color: rgba(255, 255, 255, 0.5);
-        transform: translateY(-3px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       }
     }
@@ -217,45 +211,45 @@ html, body {
 // Estadísticas rápidas - Dinámicas
 .quick-stats {
   display: flex;
-  gap: clamp(1rem, 4vw, 2rem);
+  gap: clamp(0.8rem, 3vw, 1.5rem);
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
-  border-radius: clamp(25px, 6vw, 50px);
-  padding: clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
+  border-radius: clamp(20px, 5vw, 40px);
+  padding: clamp(0.8rem, 3vw, 1.2rem) clamp(1.5rem, 5vw, 2.5rem);
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-wrap: wrap;
   width: 100%;
-  max-width: min(600px, 90vw);
+  max-width: min(550px, 85vw);
   
   .stat-item {
     text-align: center;
     color: white;
     flex: 1;
-    min-width: clamp(80px, 20vw, 120px);
+    min-width: clamp(70px, 18vw, 100px);
     
     .stat-number {
       font-family: var(--font-primary);
-      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-size: clamp(1.3rem, 4.5vw, 1.9rem);
       font-weight: 800;
       color: var(--color-primary-light);
-      margin-bottom: clamp(0.1rem, 0.5vw, 0.2rem);
+      margin-bottom: clamp(0.1rem, 0.4vw, 0.2rem);
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
     
     .stat-label {
-      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      font-size: clamp(0.6rem, 1.8vw, 0.7rem);
       font-weight: 500;
       color: rgba(255, 255, 255, 0.8);
       text-transform: uppercase;
-      letter-spacing: clamp(0.5px, 0.2vw, 1px);
+      letter-spacing: clamp(0.4px, 0.15vw, 0.8px);
     }
   }
   
   .stat-divider {
     width: 1px;
-    height: clamp(20px, 6vw, 30px);
+    height: clamp(18px, 5vw, 25px);
     background: rgba(255, 255, 255, 0.2);
   }
 }
@@ -276,13 +270,13 @@ html, body {
 @media (max-width: 768px) {
   .home-container {
     justify-content: flex-start;
-    padding-top: clamp(6rem, 12vw, 8rem); // Más espacio en tablets
+    padding-top: clamp(5rem, 10vw, 7rem); // Reducido el espacio en tablets
   }
   
   .action-buttons {
     flex-direction: column;
     width: 100%;
-    max-width: min(300px, 80vw);
+    max-width: min(280px, 75vw);
     
     .action-button {
       width: 100%;
@@ -292,14 +286,14 @@ html, body {
   
   .quick-stats {
     flex-direction: column;
-    gap: clamp(0.8rem, 3vw, 1rem);
-    padding: clamp(1.2rem, 4vw, 1.5rem) clamp(1.5rem, 5vw, 2rem);
-    border-radius: clamp(20px, 5vw, 30px);
+    gap: clamp(0.6rem, 2.5vw, 0.8rem);
+    padding: clamp(1rem, 3.5vw, 1.2rem) clamp(1.2rem, 4vw, 1.8rem);
+    border-radius: clamp(18px, 4vw, 25px);
     
     .stat-item {
       display: flex;
       align-items: center;
-      gap: clamp(0.8rem, 2vw, 1rem);
+      gap: clamp(0.6rem, 1.8vw, 0.8rem);
       min-width: auto;
       
       .stat-number {
@@ -315,18 +309,18 @@ html, body {
 
 @media (max-width: 480px) {
   .home-container {
-    padding-top: clamp(5.5rem, 11vw, 7rem); // Más espacio en móviles
+    padding-top: clamp(4.5rem, 9vw, 6rem); // Reducido el espacio en móviles
   }
   
   .action-buttons {
-    max-width: min(280px, 85vw);
+    max-width: min(260px, 80vw);
     
     .action-button {
-      min-height: clamp(44px, 10vw, 50px);
+      min-height: clamp(40px, 9vw, 45px);
     }
   }
   
   .quick-stats {
-    padding: clamp(1rem, 4vw, 1.2rem) clamp(1.2rem, 4vw, 1.5rem);
+    padding: clamp(0.8rem, 3.5vw, 1rem) clamp(1rem, 3.5vw, 1.3rem);
   }
 }

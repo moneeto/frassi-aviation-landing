@@ -118,10 +118,7 @@
   }
 }
 
-.service-card:hover .service-icon-wrapper {
-  transform: scale(1.1);
-  box-shadow: 0 12px 32px rgba(0, 92, 170, 0.4);
-}
+
 
 .service-card-body {
   flex: 1;
@@ -178,11 +175,6 @@
     line-height: 1.4;
     flex: 1;
   }
-}
-
-.service-item:hover .service-item-icon {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 92, 170, 0.3);
 }
 
 .service-card-footer {
