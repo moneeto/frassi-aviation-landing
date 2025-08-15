@@ -128,7 +128,7 @@ const MachXSection = () => (
       <img src={machxlogo} alt="Mach X integration" className="machx-logo" loading="lazy" />
     </div>
     <div className="machx-button-container">
-      <a href="https://www.machx.it/" target="_blank" rel="noopener noreferrer">
+      <a href="https://machxaviation.com/" target="_blank" rel="noopener noreferrer">
         <Button color="primary"><b>LEARN MORE ABOUT MACH X</b></Button>
       </a>
     </div>

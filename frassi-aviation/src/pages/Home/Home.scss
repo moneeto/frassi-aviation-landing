@@ -289,6 +289,7 @@ html, body {
     gap: clamp(0.6rem, 2.5vw, 0.8rem);
     padding: clamp(1rem, 3.5vw, 1.2rem) clamp(1.2rem, 4vw, 1.8rem);
     border-radius: clamp(18px, 4vw, 25px);
+    width: 60%;
     
     .stat-item {
       display: flex;

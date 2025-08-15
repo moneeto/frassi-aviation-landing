@@ -40,7 +40,7 @@ body {
   text-shadow: 0 2px 4px rgba(0, 92, 170, 0.1);
 }
 
-.font-secondary {
+.font-secondary, .lobster {
   font-family: var(--font-secondary) !important;
   color: var(--color-text);
   font-size: 1.4rem;
@@ -49,6 +49,15 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.font-primary-white {
+  font-family: var(--font-primary) !important;
+  color: var(--color-white);
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
 }
 
 p {
@@ -85,4 +94,20 @@ h3 {
 // Efectos de hover modernos para enlaces
 a {
   transition: all 0.3s ease;
+}
+
+// Contenedores modernos
+.modern-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+  }
 } 

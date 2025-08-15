@@ -210,7 +210,7 @@ const Footer = () => {
               </p>
               <p>
                 <i className="fas fa-phone"></i>
-                1-844-372-7744
+                (+1) 305-339-9112 | (+54) 11 5603-5685
               </p>
               <p>
                 <i className="fas fa-envelope"></i>

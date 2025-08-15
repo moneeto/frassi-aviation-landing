@@ -54,7 +54,7 @@ const Contact = () => {
                     <FaMapMarkerAlt className="contact-icon" />
                     <div className="contact-text">
                       <span className="contact-label">Address</span>
-                      <span className="contact-value">4089 NW 135 Street<br />Opa-locka, Florida 33054<br />United States</span>
+                      <span className="contact-value">Mobil / Base in North Perry Airport<br />Florida 33054<br />United States</span>
                     </div>
                   </div>
                   
@@ -62,7 +62,7 @@ const Contact = () => {
                     <FaPhoneAlt className="contact-icon" />
                     <div className="contact-text">
                       <span className="contact-label">Phone</span>
-                      <span className="contact-value">1-844-FRASSI<br />(1-844-372-7744)</span>
+                      <span className="contact-value">(+1) 305-339-9112 <br /> (+54) 11 5603-5685</span>
                     </div>
                   </div>
                   

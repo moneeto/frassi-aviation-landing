@@ -40,6 +40,8 @@
   font-size: 1.1rem;
   line-height: 1.7;
   padding: 0 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .partners-row {
@@ -55,12 +57,12 @@
   border-radius: var(--border-radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: var(--shadow-md);
-  padding: 1.5rem;
   transition: all 0.3s ease;
   text-align: center;
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 }
 
 .partner-logo {
@@ -91,6 +93,8 @@
   max-width: 300px;
   line-height: 1.6;
   margin: 0 auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 // Animaciones
@@ -173,10 +177,5 @@
     padding: 0 0.5rem;
     max-width: 280px;
   }
-  
-  .partner-block {
-    padding: 1.2rem;
-    margin: 0 0.5rem 2rem 0.5rem;
-    max-width: 320px;
-  }
+
 }

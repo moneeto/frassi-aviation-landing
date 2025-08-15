@@ -88,7 +88,6 @@
   
   &:hover {
     background: rgba(102, 126, 234, 0.1);
-    transform: translateX(5px);
   }
   
   &:last-child {
@@ -203,7 +202,6 @@
       &:hover {
         background: rgba(255, 255, 255, 0.2);
         color: white;
-        transform: translateY(-2px);
       }
     }
   }
@@ -298,7 +296,7 @@
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
     
     &:hover {
-      transform: translateY(-3px);
+      transform: translateY(-1px);
       box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
       background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
     }
