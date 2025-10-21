@@ -122,7 +122,7 @@ const MachXSection = () => (
     <h2 className="font-secondary">The operative right hand</h2>
     <h3 className="font-primary"><b>MACH X</b></h3>
     <p className="text-justify">
-      We work together in the smart and logistical integration with the hangars. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      We work together in the smart and logistical integration with the hangars.
     </p>
     <div className="machx-logo-container">
       <img src={machxlogo} alt="Mach X integration" className="machx-logo" loading="lazy" />
